@@ -1,0 +1,26 @@
+{
+  "name": "mijn-petekindje",
+  "version": "1.0.0",
+  "description": "Mijn Petekindje",
+  "main": "index.html",
+  "scripts": {
+    "start": "simplehttpserver & livereload '.' -p 35730 -ee 'json'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/bhamblok/mijn-petekindje.git"
+  },
+  "keywords": [],
+  "author": "@bhamblok",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "livereload": "^0.7.0",
+    "simplehttpserver": "^0.3.0",
+    "stylelint": "^9.7.1",
+    "stylelint-config-standard": "^18.2.0"
+  }
+}

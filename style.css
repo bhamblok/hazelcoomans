@@ -1,0 +1,50 @@
+:root {
+  /* --bg-gradient: linear-gradient( 135deg, #5EFCE8 10%, #736EFE 100%); */
+  /* https://webkul.github.io/coolhue/?2.0 */
+  --bg-gradient: linear-gradient( 135deg, #FAD7A1 10%, #E96D71 100%);
+}
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+body {
+  background-image: var(--bg-gradient);
+}
+.install {
+  position: absolute;
+  display: grid;
+  background-image: var(--bg-gradient);
+  justify-content: center;
+  align-content: center;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+}
+.installed .install { display: none; }
+.grid {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 40px;
+  grid-template-areas:
+    "main main"
+    "left right";
+}
+.content {
+  grid-area: main;
+  padding: 1em;
+}
+.content, .content:target ~ #home { display: none; }
+#home, .content:target { display: block; }
+.nav-left {
+  grid-area: left;
+  place-self: center;
+}
+.nav-right {
+  grid-area: right;
+  place-self: center;
+}

@@ -1,0 +1,50 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hazel Coomans</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="manifest" href="/manifest.json">
+  <script src="/app.js"></script>
+  <!-- icon in the highest resolution we need it for -->
+  <link rel="icon" sizes="192x192" href="icon.png">
+  <!-- reuse same icon for Safari -->
+  <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+  <link rel="apple-touch-startup-image" href="icon.png">
+  <meta name="apple-mobile-web-app-title" content="Hazel">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#FAD7A1">
+</head>
+<body>
+<div class="install">
+  <p>Klik hier om de app te installeren...</p>
+  <button>Install</button>
+</div>
+<div class="grid">
+  <div id="muziek" class="content">
+    <h1>Muziek</h1>
+    <audio controls src="/media/examples/t-rex-roar.mp3"></audio>
+    <audio controls src="/media/examples/t-rex-roar.mp3"></audio>
+    <audio controls src="/media/examples/t-rex-roar.mp3"></audio>
+    <audio controls src="/media/examples/t-rex-roar.mp3"></audio>
+  </div>
+  <div id="home" class="content">
+    <h1>Hazel Coomans</h1>
+    <div class="birth">
+      <div class="years"></div>
+      <div class="months"></div>
+      <div class="days"></div>
+      <div class="hours"></div>
+      <div class="minutes"></div>
+      <div class="seconds"></div>
+    </div>
+  </div>
+  <a href="#home" class="nav-left">Hazel Coomans</a>
+  <a href="#muziek" class="nav-right">Muziek</a>
+</div>
+</body>
+</html>
