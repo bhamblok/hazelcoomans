@@ -55,7 +55,7 @@ body {
   width: 100vw;
   height: 100vh;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 70px;
+  grid-template-rows: 1fr 80px;
   grid-template-areas:
     "main main main"
     "left center right";
@@ -63,7 +63,7 @@ body {
 .content {
   grid-area: main;
   padding: 2em 2em 2em 2em;
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  padding: calc(env(safe-area-inset-top) + 2em) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   display: flex;
   justify-content: center;
   justify-items: center;
