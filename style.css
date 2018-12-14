@@ -1,7 +1,18 @@
+@font-face {
+  font-family: 'hazel';
+  src: url('/fonts/hazel.woff2') format('woff2'),
+       url('/fonts/hazel.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   /* --bg-gradient: linear-gradient( 135deg, #5EFCE8 10%, #736EFE 100%); */
   /* https://webkul.github.io/coolhue/?2.0 */
   --bg-gradient: linear-gradient( 135deg, #FAD7A1 10%, #E96D71 100%);
+  --border-color: #FAD7A1;
+  --button-color: #FAD7A1;
+  --shadow-color: #E96D71;
+  --text-color: #fefefe;
 }
 html, body {
   width: 100vw;
@@ -9,42 +20,104 @@ html, body {
   margin: 0;
   padding: 0;
   font-size: 16px;
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 body {
   background-image: var(--bg-gradient);
 }
-.install {
+.install, .no-access {
   position: absolute;
   display: grid;
   background-image: var(--bg-gradient);
   justify-content: center;
   align-content: center;
   z-index: 100;
-  width: 100vw;
+  width: calc(100vw - 4em);
   height: 100vh;
+  padding: 2em;
+  text-align: center;
 }
+.install svg {
+  stroke: #fefefe;
+  fill: #fefefe;
+}
+.no-access { z-index: 200; }
 .installed .install { display: none; }
+.access .no-access { display: none; }
 .grid {
   display: grid;
   width: 100vw;
   height: 100vh;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 40px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 50px;
   grid-template-areas:
-    "main main"
-    "left right";
+    "main main main main"
+    "left left-middle right-middle right";
 }
 .content {
   grid-area: main;
-  padding: 1em;
+  padding: 1em 2em 2em 2em;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
 }
 .content, .content:target ~ #home { display: none; }
 #home, .content:target { display: block; }
-.nav-left {
-  grid-area: left;
-  place-self: center;
+
+button,
+.content a {
+  border: 1px solid var(--border-color);
+  padding: 1em;
+  background: var(--button-color);
+  border-radius: 0.5em;
+  box-shadow: 0px 1px 1px var(--shadow-color);
+  color: var(--shadow-color);
 }
-.nav-right {
-  grid-area: right;
-  place-self: center;
+.content a {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 85%;
+}
+a.hulplijn {
+  margin-top: 12em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  border-right: 1px dashed var(--border-color);
+}
+.nav:last-child {
+  border-right: none;
+}
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+h1 {
+  font-family: 'hazel';
+  font-size: 100px;
+  line-height: 0.5;
+}
+.birthdate {
+  font-size: 30px;
+  text-align: left;
+}
+.birthdate span {
+  font-size: 60px;
+  text-align: right;
+  width: 160px;
+  margin-right: 12px;
+  display: inline-block;
+}
+audio {
+  margin-bottom: 1em;
 }

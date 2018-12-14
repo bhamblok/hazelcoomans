@@ -4,10 +4,12 @@ let standalone = window.navigator.standalone === true
 let btnAddToHome;
 let deferredPrompt;
 let birthDate;
+const iOS = (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream);
 
 console.log('STANDALONE:', standalone); // eslint-disable-line no-console
 
 const installed = () => document.body.classList.add('installed');
+const hasAccess = () => document.body.classList.add('access');
 
 const cache = {};
 
@@ -29,7 +31,7 @@ const updateDate = () => {
     cache.years = years;
   }
   if (cache.months !== months) {
-    document.querySelector('.months').innerHTML = months ? `<span>${months}</span> ${months === 1 ? 'maand' : 'maanden'}` : '';
+    document.querySelector('.months').innerHTML = months ? `<span>${months}</span> ${months === 1 ? 'maand' : 'maanden'}` : '<span>&nbsp;</span>';
     cache.months = months;
   }
   if (cache.days !== days) {
@@ -77,14 +79,21 @@ window.addEventListener('load', async () => {
     livereload.src = 'http://localhost:35730/livereload.js?snipver=1';
     document.body.appendChild(livereload);
   }
-  btnAddToHome = document.querySelector('.install button');
+  if (standalone || window.location.search === '?q=fvnKDRlHIIw9F6dQ2RCA') {
+    hasAccess();
+  }
   if (standalone) {
     installed();
+  } else if (iOS) {
+    document.querySelector('.install.install-android').style.display = 'none';
   } else {
+    document.querySelector('.install.install-ios').style.display = 'none';
+    btnAddToHome = document.querySelector('.install button');
     installable.then(() => {
       btnAddToHome.addEventListener('click', async () => {
         localStorage.setItem('standalone', true);
         installed();
+        hasAccess();
         if (deferredPrompt) {
           deferredPrompt.prompt();
           const choiceResult = await deferredPrompt.userChoice;
