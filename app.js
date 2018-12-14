@@ -62,7 +62,7 @@ const installable = new Promise((resolve) => {
 });
 
 // Registering Service Worker
-if ('zzserviceWorker' in navigator) {
+if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js');
 }
 
