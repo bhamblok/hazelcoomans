@@ -49,11 +49,11 @@ body {
   display: grid;
   width: 100vw;
   height: 100vh;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 60px;
   grid-template-areas:
-    "main main main main"
-    "left left-middle right-middle right";
+    "main main main"
+    "left center right";
 }
 .content {
   grid-area: main;
@@ -65,7 +65,6 @@ body {
 }
 .content, .content:target ~ #home { display: none; }
 #home, .content:target { display: block; }
-
 button,
 .content a {
   border: 1px solid var(--border-color);
@@ -78,12 +77,12 @@ button,
 .content a {
   display: inline-block;
   box-sizing: border-box;
-  width: 85%;
+  width: 90%;
+  margin-bottom: 1em;
 }
-a.hulplijn {
-  margin-top: 12em;
+.content a.hulplijn {
+  margin-top: 3em;
 }
-
 .nav {
   display: flex;
   align-items: center;
@@ -101,22 +100,25 @@ a {
   color: var(--text-color);
   text-decoration: none;
 }
-
 h1 {
   font-family: 'hazel';
-  font-size: 100px;
-  line-height: 0.5;
+  font-size: 80px;
+  line-height: 1.4;
 }
 .birthdate {
   font-size: 30px;
   text-align: left;
 }
 .birthdate span {
+  width: 47%;
+  /* margin-right: 12px; */
+  display: inline-block;
+  padding: 0 0.2em;
+  box-sizing: border-box;
+}
+.birthdate span.digit {
   font-size: 60px;
   text-align: right;
-  width: 160px;
-  margin-right: 12px;
-  display: inline-block;
 }
 audio {
   margin-bottom: 1em;

@@ -27,27 +27,27 @@ const updateDate = () => {
   if (days < 0) days += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
   if (months < 0) months += 12;
   if (cache.years !== years) {
-    document.querySelector('.years').innerHTML = years ? `<span>${years}</span> jaar` : '';
+    document.querySelector('.years').innerHTML = years ? `<span class="digit">${years}</span> <span>jaar</span>` : '';
     cache.years = years;
   }
   if (cache.months !== months) {
-    document.querySelector('.months').innerHTML = months ? `<span>${months}</span> ${months === 1 ? 'maand' : 'maanden'}` : '<span>&nbsp;</span>';
+    document.querySelector('.months').innerHTML = months ? `<span class="digit">${months}</span> <span>${months === 1 ? 'maand' : 'maanden'}</span>` : '<span class="digit">&nbsp;</span> <span> </span>';
     cache.months = months;
   }
   if (cache.days !== days) {
-    document.querySelector('.days').innerHTML = `<span>${days}</span> ${days === 1 ? 'dag' : 'dagen'}`;
+    document.querySelector('.days').innerHTML = `<span class="digit">${days}</span> <span>${days === 1 ? 'dag' : 'dagen'}</span>`;
     cache.days = days;
   }
   if (cache.hours !== hours) {
-    document.querySelector('.hours').innerHTML = `<span>${hours}</span> uur`;
+    document.querySelector('.hours').innerHTML = `<span class="digit">${hours}</span> <span>uur</span>`;
     cache.hours = hours;
   }
   if (cache.minutes !== minutes) {
-    document.querySelector('.minutes').innerHTML = `<span>${minutes}</span> ${minutes === 1 ? 'minuut' : 'minuten'}`;
+    document.querySelector('.minutes').innerHTML = `<span class="digit">${minutes}</span> <span>${minutes === 1 ? 'minuut' : 'minuten'}</span>`;
     cache.minutes = minutes;
   }
   if (cache.seconds !== seconds) {
-    document.querySelector('.seconds').innerHTML = `<span>${seconds}</span> ${seconds === 1 ? 'seconde' : 'seconden'}`;
+    document.querySelector('.seconds').innerHTML = `<span class="digit">${seconds}</span> <span>${seconds === 1 ? 'seconde' : 'seconden'}</span>`;
     cache.seconds = seconds;
   }
 };
