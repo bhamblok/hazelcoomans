@@ -1,7 +1,7 @@
 {
   "short_name": "hazel",
   "name": "Hazel",
-  "birthDate": "2018-12-14 03:36:00",
+  "birthDate": "2018-12-14T03:36:00.000Z",
   "icons": [
     {
       "src": "/icons/icon-32.png",
