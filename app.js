@@ -96,4 +96,5 @@ window.addEventListener('load', async () => {
   manifest = JSON.parse(await fetch(document.head.querySelector('[rel="manifest"]').href).then(res => res.text()));
   birthDate = new Date(manifest.birthDate);
   setInterval(updateDate, 1000);
+  updateDate();
 });
