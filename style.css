@@ -69,6 +69,7 @@ body {
   justify-content: center;
   justify-items: center;
   text-align: center;
+  overflow: scroll;
 }
 .content, .content:target ~ #home { display: none; }
 #home, .content:target { display: block; }
