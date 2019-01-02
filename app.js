@@ -46,10 +46,10 @@ const updateDate = () => {
     document.querySelector('.minutes').innerHTML = `<span class="digit">${minutes}</span> <span>${minutes === 1 ? 'minuut' : 'minuten'}</span>`;
     cache.minutes = minutes;
   }
-  if (cache.seconds !== seconds) {
-    document.querySelector('.seconds').innerHTML = `<span class="digit">${seconds}</span> <span>${seconds === 1 ? 'seconde' : 'seconden'}</span>`;
-    cache.seconds = seconds;
-  }
+  // if (cache.seconds !== seconds) {
+  //   document.querySelector('.seconds').innerHTML = `<span class="digit">${seconds}</span> <span>${seconds === 1 ? 'seconde' : 'seconden'}</span>`;
+  //   cache.seconds = seconds;
+  // }
 };
 
 const installable = new Promise((resolve) => {
