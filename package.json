@@ -18,7 +18,7 @@
     "eslint": "^5.8.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "livereload": "^0.7.0",
+    "livereload": "^0.8.0",
     "simplehttpserver": "^0.3.0",
     "stylelint": "^9.7.1",
     "stylelint-config-standard": "^18.2.0"
