@@ -61,11 +61,6 @@ const installable = new Promise((resolve) => {
   resolve();
 });
 
-// Registering Service Worker
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js');
-}
-
 window.addEventListener('appinstalled', () => {
   standalone = true;
   installed();
@@ -74,6 +69,10 @@ window.addEventListener('appinstalled', () => {
 });
 
 window.addEventListener('load', async () => {
+  // Registering Service Worker
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
   if (window.location.hostname === 'localhost') {
     const livereload = document.createElement('script');
     livereload.src = 'http://localhost:35730/livereload.js?snipver=1';
